@@ -1,17 +1,9 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     from sys import argv
-    i = 1
-    no_of_elements = len(argv) - 1
-    if no_of_elements == 1:
-        print(f"{no_of_elements} argument:")
-        print(f"{no_of_elements}: {argv[-1]}")
-    if no_of_elements > 1:
-        print(f"{no_of_elements} arguments:")
-    while(i < no_of_elements):
-        print(f"{i}: {argv[i]}")
-        i += 1
-if no_of_elements > 1:
-    print(f"{no_of_elements}: {argv[-1]}")
-if no_of_elements == 0:
-    print(f"{no_of_elements} arguments.")
+    n = len(argv)
+    print("{:d} {:s}{:s}".format(n - 1, "argument" if n <= 2 else "arguments",
+                                 "." if n == 1 else ":"))
+    for i, s in enumerate(argv):
+        if i > 0:
+            print("{:d}: {:s}".format(i, s))
