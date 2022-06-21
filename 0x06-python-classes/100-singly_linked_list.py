@@ -11,7 +11,7 @@ class Node:
         __next_node (Node): the following node in linked list
     """
     def __init__(self, data, next_node=None):
-         """Initializes the node attributes
+        """Initializes the node attributes
 
 
         Args:
@@ -46,7 +46,7 @@ class Node:
 
     @property
     def next_node(self):
-         """getting the next_node
+        """getting the next_node
 
 
         Returns:
