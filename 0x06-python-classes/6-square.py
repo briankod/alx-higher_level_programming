@@ -67,7 +67,7 @@ class Square:
         Returns:
             the x and y positions
         """
-        return(self._position)
+        return(self.__position)
 
     @size.setter
     def size(self, value):
