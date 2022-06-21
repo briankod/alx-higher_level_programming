@@ -3,7 +3,7 @@
 
 
 class Square:
-    """Module of a class
+    """Module of a square
 
 
     Attributes:
