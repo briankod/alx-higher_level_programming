@@ -107,6 +107,12 @@ class Square:
             self.__position = value
 
     def __str__(self):
+        """Represents the Square objects as a string
+
+
+        Returns:
+            the representing string
+        """
         if self.size == 0:
             return ("")
         string = "\n" * self.position[1] + (" " * self.position[0] +
