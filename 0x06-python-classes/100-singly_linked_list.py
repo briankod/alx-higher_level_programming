@@ -22,8 +22,8 @@ class Node:
         Returns:
             None
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     def __str__(self):
         """Represents the Node objects as a string
