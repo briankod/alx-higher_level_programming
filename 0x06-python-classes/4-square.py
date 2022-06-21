@@ -46,8 +46,12 @@ class Square:
         """setting the size
 
 
+        Args:
+            value (int): Describes the length of a square
+
+
         Returns:
-            the length of a square
+            None
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")

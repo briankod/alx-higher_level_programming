@@ -78,7 +78,7 @@ class Square:
 
 
         Returns:
-            the length of a square
+            None
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
@@ -97,7 +97,7 @@ class Square:
 
 
         Returns:
-            the x and y positions
+            None
         """
         if type(value) is not tuple or len(value) != 2 or \
            type(value[0]) is not int or value[0] < 0 or \
