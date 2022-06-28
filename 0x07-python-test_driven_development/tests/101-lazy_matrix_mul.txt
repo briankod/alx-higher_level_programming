@@ -1,0 +1,29 @@
+The 101-lazy_matrix_mul module
+======================
+
+Using lazy_matrix_mul
+-------------------
+
+Import lazy_matrix_mul from the 101-lazy_matrix_mul module:
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Tests for module docstring:
+    >>> m_docstr = __import__("101-lazy_matrix_mul").__doc__
+    >>> len(m_docstr) > 1
+    True
+
+Tests for function docstring:
+    >>> f_docstr = __import__("101-lazy_matrix_mul").lazy_matrix_mul.__doc__
+    >>> len(f_docstr) > 1
+    True
+
+Tests multiplication when two matrices that have integers are given:
+    >>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+    [[ 7 10]
+     [15 22]]
+
+
+
+
+
+
