@@ -21,9 +21,3 @@ Tests multiplication when two matrices that have integers are given:
     >>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
     [[ 7 10]
      [15 22]]
-
-
-
-
-
-
