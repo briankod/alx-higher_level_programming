@@ -18,8 +18,11 @@ Tests for function docstring:
     True
 
 Tests indentation when given a string argument:
-    text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    >>> text_indentation("Common burger ingredients: buns, beef and ketchup.")
+    Common burger ingredients:
+    <BLANKLINE> 
+    buns, beef and ketchup.
+    <BLANKLINE> 
 
 Tests indetation when argument is not string:
     >>> text_indentation(4)

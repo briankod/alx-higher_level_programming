@@ -6,9 +6,9 @@ The 5-text_indentation module supplies one function, text_indentation(text).
 For example,
 >>> text_indentation("Common burger ingredients: buns, beef and ketchup.")
 Common burger ingredients:
-
+<BLANKLINE>
 buns, beef and ketchup.
-
+<BLANKLINE>
 """
 
 
