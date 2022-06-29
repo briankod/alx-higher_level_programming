@@ -4,15 +4,10 @@ This is the 5-text_indentation module.
 
 The 5-text_indentation module supplies one function, text_indentation(text).
 For example,
->>> text_indentation("Most common burger ingredients are: buns, beef\
-    and ketchup. Do those qualify as most common? I would say yes.")
-Most common burger ingredients are:
+>>> text_indentation("Common burger ingredients: buns, beef and ketchup.")
+Common burger ingredients:
 
 buns, beef and ketchup.
-
-Do those qualify as most common?
-
-I would say yes.
 
 """
 
