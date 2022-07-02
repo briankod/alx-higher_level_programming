@@ -4,6 +4,7 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
     """Module of max_integer unittest"""
     def m_docstr_test(self):
@@ -55,12 +56,11 @@ class TestMaxInteger(unittest.TestCase):
         """Tests for max at beginning"""
         lst = [98, 19, 3, 17]
         self.assertEqual(max_integer(lst), 98)
-        
+
     def max_middle_test(self):
         """Tests for max in middle"""
         lst = [33, 38, 49, 23, 40]
         self.assertEqual(max_integer(lst), 49)
-
 
     def max_end_test(self):
         """Tests for max at end"""
