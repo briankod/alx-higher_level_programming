@@ -21,3 +21,67 @@ Tests multiplication when two matrices that have integers are given:
     >>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
     [[ 7 10]
      [15 22]]
+
+Tests mul when non-list is m_a:
+    >>> lazy_matrix_mul(None, [[5, 6], [9, 8]])
+    Traceback (most recent call last):
+    ...
+    TypeError: Object arrays are not currently supported
+
+Tests mul when m_b is non-list:
+    >>> lazy_matrix_mul([[5, 6], [9, 8]], None)
+    Traceback (most recent call last):
+    ...
+    TypeError: Object arrays are not currently supported
+
+Tests mul when m_a is empty:
+    >>> lazy_matrix_mul([], [[5, 6], [9, 8]])
+    Traceback (most recent call last):
+    ...
+    ValueError: shapes (0,) and (2,2) not aligned: 0 (dim 0) != 2 (dim 0)
+
+Tests mul when m_a has empty rows:
+    >>> lazy_matrix_mul([[], []], [[5, 6], [9, 8]])
+    Traceback (most recent call last):
+    ...
+    ValueError: shapes (2,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
+
+Tests mul when m_b is empty:
+    >>> lazy_matrix_mul([[5, 6], [9, 8]], [])
+    Traceback (most recent call last):
+    ...
+    ValueError: shapes (2,2) and (0,) not aligned: 2 (dim 1) != 0 (dim 0)
+
+Tests mul when m_b has empty rows:
+    >>> print(lazy_matrix_mul([[5, 6], [9, 8]], [[], []]))
+    []
+
+Tests mul when m_a has uneven rows:
+    >>> lazy_matrix_mul([[10, 20], [30, 40.5, 55]], [[5, 6], [9, 8]])
+    Traceback (most recent call last):
+    ...
+    ValueError: setting an array element with a sequence.
+
+Tests mul when m_b has uneven rows:
+    >>> lazy_matrix_mul([[5, 6], [9, 8]], [[10, 20], [30, 40, 50]])
+    Traceback (most recent call last):
+    ...
+    ValueError: setting an array element with a sequence.
+
+Tests mul when a non-number is in list in m_a:
+    >>> lazy_matrix_mul([[22, "jump"], [3.5, 44]], [[11, 29], [23, 4.0]])
+    Traceback (most recent call last):
+    ...
+    TypeError: invalid data type for einsum
+
+Tests mul when a non-number is in list in m_b:
+    >>> lazy_matrix_mul([[41, 25], [8, 9]], [[22, "street"], [30, 16]])
+    Traceback (most recent call last):
+    ...
+    TypeError: invalid data type for einsum
+
+Tests mul when matrices mismatch:
+    >>> lazy_matrix_mul([[3, 19, 24], [19, 5.5, 6]], [[5, 6], [9, 8]])
+    Traceback (most recent call last):
+    ...
+    ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
