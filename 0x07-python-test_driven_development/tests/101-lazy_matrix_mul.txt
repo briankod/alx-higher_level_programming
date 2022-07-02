@@ -40,12 +40,6 @@ Tests mul when m_a is empty:
     ...
     ValueError: shapes (0,) and (2,2) not aligned: 0 (dim 0) != 2 (dim 0)
 
-Tests mul when m_a has empty rows:
-    >>> lazy_matrix_mul([[], []], [[5, 6], [9, 8]])
-    Traceback (most recent call last):
-    ...
-    ValueError: shapes (2,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
-
 Tests mul when m_b is empty:
     >>> lazy_matrix_mul([[5, 6], [9, 8]], [])
     Traceback (most recent call last):
@@ -56,25 +50,13 @@ Tests mul when m_b has empty rows:
     >>> print(lazy_matrix_mul([[5, 6], [9, 8]], [[], []]))
     []
 
-Tests mul when m_a has uneven rows:
-    >>> lazy_matrix_mul([[10, 20], [30, 40.5, 55]], [[5, 6], [9, 8]])
-    Traceback (most recent call last):
-    ...
-    ValueError: setting an array element with a sequence.
-
-Tests mul when m_b has uneven rows:
-    >>> lazy_matrix_mul([[5, 6], [9, 8]], [[10, 20], [30, 40, 50]])
-    Traceback (most recent call last):
-    ...
-    ValueError: setting an array element with a sequence.
-
-Tests mul when a non-number is in list in m_a:
+Tests mul when a string is in list in m_a:
     >>> lazy_matrix_mul([[22, "jump"], [3.5, 44]], [[11, 29], [23, 4.0]])
     Traceback (most recent call last):
     ...
     TypeError: invalid data type for einsum
 
-Tests mul when a non-number is in list in m_b:
+Tests mul when a string is in list in m_b:
     >>> lazy_matrix_mul([[41, 25], [8, 9]], [[22, "street"], [30, 16]])
     Traceback (most recent call last):
     ...
@@ -85,3 +67,15 @@ Tests mul when matrices mismatch:
     Traceback (most recent call last):
     ...
     ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
+
+Test mul when one argument is given:
+    >>> lazy_matrix_mul([[5, 9]])
+    Traceback (most recent call last):
+        ...
+    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+Tests mul when no arguments are given:
+    >>> lazy_matrix_mul()
+    Traceback (most recent call last):
+        ...
+    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
