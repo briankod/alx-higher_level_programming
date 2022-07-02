@@ -20,16 +20,12 @@ class TestMaxInteger(unittest.TestCase):
     def empty_list_test(self):
         """Tests for empty list"""
         lst = []
-        self.assertIsNone(max_integer(lst))
+        self.assertIsNone(max_integer(lst), None)
 
-    def test_no_args(self):
+    def none_arg_test(self):
         """Tests for no arguments"""
-        self.assertIsNone(max_integer())
-
-    def identical_int_test(self):
-        """Tests for all positive with max at end"""
-        lst = [3, 4, 7, 3]
-        self.assertEqual(max_integer(lst), 3)
+        with self.assertRaises(TypeError):
+            max_integer(None)
 
     def not_int_test(self):
         """Tests for non-integers in list"""
@@ -39,13 +35,13 @@ class TestMaxInteger(unittest.TestCase):
 
     def one_element_test(self):
         """Tests for list of one element"""
-        lst = [2]
-        self.assertEqual(max_integer(lst), 2)
+        lst = [1]
+        self.assertEqual(max_integer(lst), )
 
     def one_negative_test(self):
         """Tests for one negative number in the list"""
-        lst = [36, 72, -36, 4, 3]
-        self.assertEqual(max_integer(lst), 36)
+        lst = [44, 72, -36, 4, 3]
+        self.assertEqual(max_integer(lst), 44)
 
     def all_negative_test(self):
         """Tests for all negative numbers in the list"""
