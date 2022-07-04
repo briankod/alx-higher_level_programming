@@ -7,6 +7,10 @@ Using MyList
 Importing the function from the module:
     >>> MyList = __import__("1-my_list").MyList
 
+Tests whether class MyList inherits from list:
+	>>> issubclass(MyList, list)
+	True
+
 Tests when unsorted list of integers is given:
     >>> my_list = MyList()
     >>> my_list.append(9)
@@ -17,6 +21,7 @@ Tests when unsorted list of integers is given:
     >>> my_list.print_sorted()
     [6, 8, 9]
 
+
 Tests when list is empty:
     >>> my_list = MyList()
     >>> print(my_list)
@@ -24,25 +29,13 @@ Tests when list is empty:
     >>> my_list.print_sorted()
     []
 
-Tests when list with some negative numbers is given:
+Tests when list of negative numbers is given:
     >>> my_list = MyList()
+    >>> my_list.append(-40)
     >>> my_list.append(-90)
-    >>> my_list.append(40)
-    >>> my_list.append(19)
     >>> my_list.append(-1)
+    >>> my_list.append(-19)
     >>> print(my_list)
-    [-90, 40, 19, -1]
+    [-40, -90, -1, -19]
     >>> my_list.print_sorted()
-    [-90, -1, 19, 40]
-
-Tests when an extra argument is given:
-    >>> my_list.print_sorted(0)
-    Traceback (most recent call last):
-    ...
-    TypeError: print_sorted() takes 1 positional argument but 2 were given
-
-Tests when a non-list is given:
-    >>> my_list = MyList(8)
-    Traceback (most recent call last):
-    ...
-    TypeError: 'int' object is not iterable
+    [-90, -40, -19, -1]
