@@ -11,19 +11,19 @@ Import BaseGeometry from 7-base_geometry module
 Tests when both arguments that pass the condition are given:
     >>> bg.integer_validator("quantity", 2)
 
-Tests when value is non-integer:
+Tests when second argument(value) is non-integer:
     >>> bg.integer_validator("name", "John")
     Traceback (most recent call last):
     ...
     TypeError: name must be an integer
 
-Tests when value to validate is 0:
+Tests when second argument(value) is 0:
     >>> bg.integer_validator("quantity", 0)
     Traceback (most recent call last):
     ...
     ValueError: quantity must be greater than 0
 
-Tests when value to validate is less than 0:
+Tests when second argument(value) is less than 0:
     >>> bg.integer_validator("quantity", -2)
     Traceback (most recent call last):
     ...
@@ -41,49 +41,43 @@ Tests when 1 argument(string) is given:
     ...
     TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-Tests when an extra argument is given:
-    >>> bg.integer_validator("quantity", 2, 3)
-    Traceback (most recent call last):
-    ...
-    TypeError: integer_validator() takes 3 positional arguments but 4 were given
-
-Tests area:
+Tests area Exception:
     >>> bg.area()
     Traceback (most recent call last):
     ...
     Exception: area() is not implemented
 
-Test when an extra argument is given for area:
-    >>> bg.area(0)
-    Traceback (most recent call last):
-    ...
-    TypeError: area() takes 1 positional argument but 2 were given
-
-Tests when the second argument(value) is None:
+Tests when the second argument(second argument(value)) is None:
     >>> bg.integer_validator("quantity", None)
     Traceback (most recent call last):
     ...
     TypeError: quantity must be an integer
 
-Tests when the second argument(value) is a bool:
+Tests when the second argument(second argument(value)) is a float:
+    >>> bg.integer_validator("quantity", 6.7)
+    Traceback (most recent call last):
+    ...
+    TypeError: quantity must be an integer
+
+Tests when the second argument(second argument(value)) is a bool:
     >>> bg.integer_validator("quantity", True)
     Traceback (most recent call last):
     ...
     TypeError: quantity must be an integer
 
-Tests when the second argument(value) is a list:
+Tests when the second argument(second argument(value)) is a list:
     >>> bg.integer_validator("quantity", [1, 2])
     Traceback (most recent call last):
     ...
     TypeError: quantity must be an integer
 
-Tests when the second argument(value) is a tuple:
+Tests when the second argument(second argument(value)) is a tuple:
     >>> bg.integer_validator("quantity", (0,))
     Traceback (most recent call last):
     ...
     TypeError: quantity must be an integer
 
-Tests when the second argument(value) is a dict:
+Tests when the second argument(second argument(value)) is a dict:
     >>> bg.integer_validator("quantity", {1 : 1, 2 : 4})
     Traceback (most recent call last):
     ...
