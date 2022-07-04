@@ -11,7 +11,7 @@ Import BaseGeometry from 7-base_geometry module
 Tests when both arguments that pass the condition are given:
     >>> bg.integer_validator("quantity", 2)
 
-Tests when second argument(value) is non-integer:
+Tests when second argument(value) is string:
     >>> bg.integer_validator("name", "John")
     Traceback (most recent call last):
     ...
@@ -53,12 +53,6 @@ Tests when the second argument(second argument(value)) is None:
     ...
     TypeError: quantity must be an integer
 
-Tests when the second argument(second argument(value)) is a float:
-    >>> bg.integer_validator("quantity", 6.7)
-    Traceback (most recent call last):
-    ...
-    TypeError: quantity must be an integer
-
 Tests when the second argument(second argument(value)) is a bool:
     >>> bg.integer_validator("quantity", True)
     Traceback (most recent call last):
@@ -79,6 +73,12 @@ Tests when the second argument(second argument(value)) is a tuple:
 
 Tests when the second argument(second argument(value)) is a dict:
     >>> bg.integer_validator("quantity", {1 : 1, 2 : 4})
+    Traceback (most recent call last):
+    ...
+    TypeError: quantity must be an integer
+
+Tests when the second argument(second argument(value)) is a set:
+    >>> bg.integer_validator("quantity", {1, 2})
     Traceback (most recent call last):
     ...
     TypeError: quantity must be an integer
