@@ -35,28 +35,14 @@ Tests when list with some negative numbers is given:
     >>> my_list.print_sorted()
     [-90, -1, 19, 40]
 
-Tests when sorted list(ascending order) is given:
-    >>> my_list = MyList()
-    >>> my_list.append(2)
-    >>> my_list.append(11)
-    >>> my_list.append(23)
-    >>> print(my_list)
-    [2, 11, 23]
-    >>> my_list.print_sorted()
-    [2, 11, 23]
-
-Test when an extra argument is given:
+Tests when an extra argument is given:
     >>> my_list.print_sorted(0)
     Traceback (most recent call last):
     ...
     TypeError: print_sorted() takes 1 positional argument but 2 were given
 
-Test when sorted list(descending order) is given:
->>> my_list = MyList()
->>> my_list.append(23)
->>> my_list.append(11)
->>> my_list.append(2)
->>> print(my_list)
-[23, 11, 2]
->>> my_list.print_sorted()
-[2, 11, 23]
+Tests when a non-list is given:
+    >>> my_list = MyList(8)
+    Traceback (most recent call last):
+    ...
+    TypeError: 'int' object is not iterable
