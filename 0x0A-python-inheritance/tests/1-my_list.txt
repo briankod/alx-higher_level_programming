@@ -39,3 +39,15 @@ Tests when list of negative numbers is given:
     [-40, -90, -1, -19]
     >>> my_list.print_sorted()
     [-90, -40, -19, -1]
+
+Test when list of integers, some of which are similar:
+    >>> my_list = MyList()
+    >>> my_list.append(4)
+    >>> my_list.append(4)
+    >>> my_list.append(6)
+    >>> my_list.append(3)
+    >>> print(my_list)
+    [4, 4, 6, 3]
+    >>> my_list.print_sorted()
+    [3, 4, 4, 6]
+    >>>
