@@ -129,7 +129,6 @@ class Base:
                 turtle.forward(rectangle.width)
                 turtle.left(90)
                 turtle.forward(rectangle.height)
-            turtle.penup()
 
         for square in list_squares:
             turtle.penup()
@@ -139,6 +138,5 @@ class Base:
             for i in range (4):
                 turtle.forward(square.size)
                 turtle.left(90)
-            turtle.penup()
 
             window.exitonclick()
