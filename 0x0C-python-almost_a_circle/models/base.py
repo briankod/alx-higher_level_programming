@@ -132,7 +132,7 @@ class Base:
             turtle.forward(rectangle.width)
             turtle.left(90)
             turtle.forward(rectangle.height)
-        turtle.penup()
+            turtle.penup()
 
         for square in list_squares:
             turtle.goto(square.x, square.y)
