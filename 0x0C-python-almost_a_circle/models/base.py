@@ -134,11 +134,11 @@ class Base:
 
         for square in list_squares:
             turtle.penup()
-            turtle.goto(rectangle.x, rectangle.y)
+            turtle.goto(square.x, square.y)
             turtle.color("magenta")
             turtle.pendown()
             for i in range (4):
-                turtle.forward(rectangle.size)
+                turtle.forward(square.size)
                 turtle.left(90)
             turtle.penup()
 
