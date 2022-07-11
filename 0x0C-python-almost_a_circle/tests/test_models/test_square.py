@@ -10,12 +10,12 @@ from models.square import Square
 
 
 class TestSquareDocs(unittest.TestCase):
-    "Tests for Base documentation"
+    "Tests for Square documentation"
     @classmethod
     def setUpClass(cls):
         "Makes sure all prerequisites for our tests are available"
 
-        """gives only members from Base members, in a list,
+        """gives only members from Square members, in a list,
          which have true values for our predicate(2nd arg)"""
         cls.sqrfuncs = inspect.getmembers(Square, inspect.isfunction)
 

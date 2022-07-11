@@ -10,12 +10,12 @@ from models.rectangle import Rectangle
 
 
 class TestRectangleDocs(unittest.TestCase):
-    "Tests for Base documentation"
+    "Tests for Rectangle documentation"
     @classmethod
     def setUpClass(cls):
         "Makes sure all prerequisites for our tests are available"
 
-        """gives only members from Base members, in a list,
+        """gives only members from Rectangle members, in a list,
          which have true values for our predicate(2nd arg)"""
         cls.rectfuncs = inspect.getmembers(Rectangle, inspect.isfunction)
 
