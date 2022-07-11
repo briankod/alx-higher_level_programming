@@ -106,7 +106,7 @@ class TestSquare(unittest.TestCase):
             Square(1, 2, "3")
 
     def test_zero_orless(self):
-        """Tests if less than zero or zero for width, height values"""
+        """Tests if less than zero or zero for width"""
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square(0)
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
