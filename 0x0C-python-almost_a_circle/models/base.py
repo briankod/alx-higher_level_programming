@@ -120,23 +120,27 @@ class Base:
         window = turtle.Screen()
         turtle.speed(5)
         turtle.pensize(5)
+        turtle.penup()
+        turtle.goto(rectangle.x, rectangle.y)
+        turtle.color("black")
+        turtle.pendown()
         for rectangle in list_rectangles:
-            turtle.penup()
-            turtle.goto(rectangle.x, rectangle.y)
-            turtle.color("black")
-            turtle.pendown()
-            for i in range (2):
-                turtle.forward(rectangle.width)
-                turtle.left(90)
-                turtle.forward(rectangle.height)
+            turtle.forward(rectangle.width)
+            turtle.left(90)
+            turtle.forward(rectangle.height)
+            turtle.left(90)
+            turtle.forward(rectangle.width)
+            turtle.left(90)
+            turtle.forward(rectangle.height)
+        turtle.penup()
 
+        turtle.goto(square.x, square.y)
+        turtle.color("magenta")
+        turtle.pendown()
         for square in list_squares:
-            turtle.penup()
-            turtle.goto(square.x, square.y)
-            turtle.color("magenta")
-            turtle.pendown()
             for i in range (4):
                 turtle.forward(square.size)
                 turtle.left(90)
-
-            window.exitonclick()
+        turtle.penup()
+        
+        window.exitonclick()
