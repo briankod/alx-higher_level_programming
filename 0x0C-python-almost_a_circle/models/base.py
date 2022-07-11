@@ -138,7 +138,7 @@ class Base:
             turtle.goto(square.x, square.y)
             turtle.color("magenta")
             turtle.pendown()
-            for colors in ["red", "yellow", "purple", "blue"]:
+            for colors in ["cyan", "red", "pink", "orange"]:
                 turtle.color(colors)
                 turtle.forward(square.size)
                 turtle.left(90)
