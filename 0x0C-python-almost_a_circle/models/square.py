@@ -34,7 +34,7 @@ class Square(Rectangle):
             the length of a square
         """
         return(self.width)
-    
+
     """The width and height must be assigned to the value of size"""
     @size.setter
     def size(self, value):
@@ -63,8 +63,9 @@ class Square(Rectangle):
         return("[Square] ({}) {}/{} - {}".format(a, b, c, d))
 
     def update(self, *args, **kwargs):
-        """ 'def update(self, *args):' alone assigns an argument to each attribute
-        'def update(self, *args, **kwargs):' assigns a key/value argument to attributes
+        """ 'def update(self, *args):' alone assigns an argument to each
+        attribute 'def update(self, *args, **kwargs):' assigns a key/value
+        argument to attributes
 
 
         Args:
@@ -95,7 +96,7 @@ class Square(Rectangle):
                     self.x = value
                 elif key == "y":
                     self.y = value
-    
+
     def to_dictionary(self):
         """
         Return:

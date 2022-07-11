@@ -158,19 +158,14 @@ class Rectangle(Base):
 
     def display(self):
         """Prints in stdout the Rectangle instance with the character #
-        
-        
+
+
         Returns:
             None
         """
-        for i in range(self.y):
-            print()
-        for j in range(self.height):
-            for m in range(self.x):
-                print(" ", end="")
-            for n in range(self.width):
-                print("#", end="")
-                print()
+        print(("\n" * self.__y) +
+              "\n".join(((" " * self.__x) + ("#" * self.__width))
+                        for i in range(self.__height)))
 
     def __str__(self):
         """Represents the Rectangle objects as a string
@@ -184,8 +179,9 @@ class Rectangle(Base):
         return("[Rectangle] ({}) {}/{} - {}/{}".format(a, b, c, d, e))
 
     def update(self, *args, **kwargs):
-        """ 'def update(self, *args):' alone assigns an argument to each attribute
-        'def update(self, *args, **kwargs):' assigns a key/value argument to attributes
+        """ 'def update(self, *args):' alone assigns an argument to each
+        attribute 'def update(self, *args, **kwargs):' assigns a key/value
+        argument to attributes
 
 
         Args:
@@ -220,7 +216,7 @@ class Rectangle(Base):
                     self.x = value
                 elif key == "y":
                     self.y = value
-    
+
     def to_dictionary(self):
         """
         Return:

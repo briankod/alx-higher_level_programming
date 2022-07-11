@@ -4,6 +4,7 @@ import json
 import csv
 import turtle
 
+
 class Base:
     """Module of a base
 
@@ -43,7 +44,7 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
         return(json.loads(json_string))
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
@@ -54,7 +55,7 @@ class Base:
                 my_obj.append(cls.to_dictionary(elm))
         with open(filename, 'w') as f:
             f.write(cls.to_json_string(my_obj))
-    
+
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
@@ -87,11 +88,12 @@ class Base:
             writer = csv.writer(f)
             if cls.__name__ == "Rectangle":
                 for elm in list_objs:
-                    writer.writerow([elm.id, elm.width, elm.height, elm.x, elm.y])
+                    writer.writerow([elm.id, elm.width, elm.height,
+                                     elm.x, elm.y])
             elif cls.__name__ == "Square":
                 for elm in list_objs:
                     writer.writerow([elm.id, elm.size, elm.x, elm.y])
-    
+
     @classmethod
     def load_from_file_csv(cls):
         """deserializes a list of rectanglesor squares in csv"""
@@ -142,5 +144,5 @@ class Base:
                 turtle.forward(square.size)
                 turtle.left(90)
         turtle.penup()
-        
+
         window.exitonclick()
