@@ -10,7 +10,7 @@ from models.square import Square
 
 
 class TestSquareDocs(unittest.TestCase):
-    "Tests for Square documentation"
+    """Tests for Square documentation"""
     @classmethod
     def setUpClass(cls):
         "Makes sure all prerequisites for our tests are available"

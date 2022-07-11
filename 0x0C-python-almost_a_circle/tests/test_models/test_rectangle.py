@@ -10,7 +10,7 @@ from models.rectangle import Rectangle
 
 
 class TestRectangleDocs(unittest.TestCase):
-    "Tests for Rectangle documentation"
+    """Tests for Rectangle documentation"""
     @classmethod
     def setUpClass(cls):
         "Makes sure all prerequisites for our tests are available"

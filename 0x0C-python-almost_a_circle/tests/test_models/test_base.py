@@ -9,7 +9,7 @@ from models.base import Base
 
 
 class TestBaseDocs(unittest.TestCase):
-    "Tests for Base documentation"
+    """Tests for Base documentation"""
     @classmethod
     def setUpClass(cls):
         "Makes sure all prerequisites for our tests are available"
