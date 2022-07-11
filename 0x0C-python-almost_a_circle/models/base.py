@@ -125,9 +125,8 @@ class Base:
             turtle.goto(rectangle.x, rectangle.y)
             turtle.color("black")
             turtle.pendown()
-            turtle.forward(rectangle.width)
             for i in range (2):
-                turtle.forward(rectangle.size)
+                turtle.forward(rectangle.width)
                 turtle.left(90)
                 turtle.forward(rectangle.height)
             turtle.penup()
