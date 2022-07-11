@@ -25,13 +25,13 @@ class TestRectangleDocs(unittest.TestCase):
         cls.rectfuncs = []
 
     def test_rectangle_conforms_pep8(self):
-        """Test models/base.py conforms to PEP8."""
+        """Test models/rectangle.py conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(["models/rectangle.py"])
         self.assertEqual(result.total_errors, 0, "Not to pep8 standard")
 
     def test_testrectangle_conforms_pep8(self):
-        """Test that tests/test_models/test_base.py conforms to PEP8."""
+        """Test that tests/test_models/test_rectangle.py conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(["tests/test_models/test_rectangle.py"])
         self.assertEqual(result.total_errors, 0, "Not to pep8 standard")

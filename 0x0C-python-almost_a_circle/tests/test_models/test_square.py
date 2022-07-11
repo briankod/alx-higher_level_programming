@@ -25,13 +25,13 @@ class TestSquareDocs(unittest.TestCase):
         cls.sqrfuncs = []
 
     def test_Square_conforms_pep8(self):
-        """Test models/base.py conforms to PEP8."""
+        """Test models/square.py conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(["models/square.py"])
         self.assertEqual(result.total_errors, 0, "Not to pep8 standard")
 
     def test_testSquare_conforms_pep8(self):
-        """Test that tests/test_models/test_base.py conforms to PEP8."""
+        """Test that tests/test_models/test_square.py conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(["tests/test_models/test_square.py"])
         self.assertEqual(result.total_errors, 0, "Not to pep8 standard")
