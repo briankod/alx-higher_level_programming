@@ -136,7 +136,6 @@ class Base:
         for square in list_squares:
             turtle.penup()
             turtle.goto(square.x, square.y)
-            turtle.color("magenta")
             turtle.pendown()
             for colors in ["red", "yellow", "purple", "blue"]:
                 turtle.color(colors)
