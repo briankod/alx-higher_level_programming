@@ -1,4 +1,4 @@
-# Project Title
+# Python
 
 Created projects demonstrate python basics
 
