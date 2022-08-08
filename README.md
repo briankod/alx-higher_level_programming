@@ -3,4 +3,4 @@
 
 # Python programming with ALX
 
-👾 Created projects demonstrate Python basics
+👾 Created projects demonstrate ```Python``` basics
