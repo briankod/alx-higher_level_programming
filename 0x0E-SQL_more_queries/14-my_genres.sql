@@ -1,3 +1,4 @@
+-- Import the database dump from hbtn_0d_tvshows to your MySQL server (same as 13-count_shows_by_genre.sql)
 -- This script uses the hbtn_0d_tvshows database to lists all genres of the show Dexter.
 -- The tv_shows table contains only one record where title = Dexter (but the id can be different)
 -- Each record should display: tv_genres.name

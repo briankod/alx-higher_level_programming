@@ -1,3 +1,4 @@
+-- Import the database dump from hbtn_0d_tvshows to your MySQL server (same as 100-not_my_genres.sql)
 -- This script lists all shows without the genre Comedy in the database hbtn_0d_tvshows.
 -- The tv_genres table contains only one record where name = Comedy (but the id can be different)
 -- Each record should display: tv_shows.title

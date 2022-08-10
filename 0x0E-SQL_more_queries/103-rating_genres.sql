@@ -1,3 +1,4 @@
+-- Import the database dump from hbtn_0d_tvshows_rate to your MySQL server (same as 102-rating_shows.sql)
 -- This script lists all genres in the database hbtn_0d_tvshows_rate by their rating.
 -- Each record should display: tv_genres.name - rating sum
 -- Results must be sorted in descending order by their rating
