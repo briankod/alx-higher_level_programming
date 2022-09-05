@@ -1,11 +1,8 @@
 #!/usr/bin/node
-'use strict';
-let arg = process.argv[2];
-let count = 0;
-if (isNaN(arg)) {
+if (process.argv[2]) {
+  for (let i = 0; i < process.argv[2]; i++) {
+    console.log('C is fun');
+  }
+} else {
   console.log('Missing number of occurrences');
-}
-while (count < arg) {
-  console.log('C is fun');
-  count++;
 }
