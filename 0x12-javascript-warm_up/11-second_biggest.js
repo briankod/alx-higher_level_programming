@@ -1,8 +1,9 @@
 #!/usr/bin/node
-let secondMax = 0;
-let args = process.argv.slice(2);
-if (args.length > 1) {
-  args.sort();
-  secondMax = args[args.length - 2];
+const argv = process.argv;
+const argc = process.argv.length;
+if (argc < 4) {
+  console.log(0);
+} else {
+  const array = argv.slice(2).sort((a, b) => a - b).reverse();
+  console.log(array[1]);
 }
-console.log(secondMax);
