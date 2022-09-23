@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """A script that takes 2 arguments.
 The first argument will be the repository name.
 The second argument will be the owner name in order.
