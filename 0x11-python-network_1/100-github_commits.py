@@ -8,10 +8,16 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    url = requests.get('https://api.github.com/repos/{}/{}/comits'
-                       .format(argv[2], argv[1]))
-    response = requests.get(url)
-    json_obj = response.json()
-    for commit in json_obj[:10]:
-        print(commit.get('sha'), end=': ')
-        print(commit.get('commit').get('author').get('name'))
+    try:
+        url = requests.get('https://api.github.com/repos/{}/{}/comits'
+                           .format(argv[2], argv[1]))
+        response = requests.get(url)
+        json_obj = response.json()
+        for i, obj in enumerate(json_obj):
+            if i == 10:
+                break
+            if type(obj) is dict:
+                name = obj.get('commit').get('author').get('name')
+                print("{}: {}".format(obj.get('sha'), name))
+    except ValueError as invalid_json:
+        pass
