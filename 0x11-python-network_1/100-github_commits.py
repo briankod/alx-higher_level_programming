@@ -8,10 +8,9 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    import requests
-    from sys import argv
-    response = requests.get('https://api.github.com/repos/{}/{}/comits'
-                            .format(argv[2], argv[1]))
+    url = requests.get('https://api.github.com/repos/{}/{}/comits'
+                       .format(argv[2], argv[1]))
+    response = requests.get(url)
     json_obj = response.json()
     for commit in json_obj[:10]:
         print(commit.get('sha'), end=': ')
