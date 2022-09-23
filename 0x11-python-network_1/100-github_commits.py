@@ -8,13 +8,12 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    url = requests.get('https://api.github.com/repos/{}/{}/commits'
-                       .format(argv[2], argv[1]))
+    import requests
+    from sys import argv
+    url = requests.get('https://api.github.com/repos/{}/{}/comits'
+                     .format(argv[2], argv[1]))
     response = requests.get(url)
-    try:
-        json_obj = response.json()
-        for i in range(10):
-            print("{}: {}".format(json_obj[i]["sha"],
-                                  json_obj[i]["commit"]["author"]["name"]))
-    except IndexError:
-        pass
+    json_obj = response.json()
+    for commit in json_obj[:10]:
+        print(commit.get('sha'), end=': ')
+        print(commit.get('commit').get('author').get('name'))
