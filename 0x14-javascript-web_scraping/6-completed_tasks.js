@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 let data;
-let dictionary = {};
+const dictionary = {};
 request(process.argv[2], function (error, response, body) {
   if (error) {
     console.error(error);
