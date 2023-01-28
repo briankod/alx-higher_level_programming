@@ -1,2 +1,8 @@
 #!/bin/bash
+
+# Environmental variables are variables that are defined for the current 
+# shell and are inherited by any child shells or processes.
+# To set/modify an environment variable the export command is used.
+# To run a python script the python3 command is used.
+# Variable data could be accessed by appending the variable name with ‘$’.
 python3 $PYFILE

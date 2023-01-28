@@ -1,5 +1,11 @@
 #!/bin/bash
+
+# To compile a Python script the python3 -m py_compile is used.
 python3 -m py_compile $PYFILE
+# Files with the “pyc” extension are the cached, compiled bytecode
+# that Python creates the first time you run your program, or whenever
+# the source file has changed.
+# __pycache__ directories are filled with files with a .pyc extension
 mv __pycache__/*.pyc ./$PYFILE'c'
 chmod +x $PYFILE'c'
 rmdir __pycache__
