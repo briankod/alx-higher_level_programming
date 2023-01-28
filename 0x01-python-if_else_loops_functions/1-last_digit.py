@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
+# Print the last digit of the number stored in the variable number...
 if number < 0:
     last_digit = number % -10
 else:
