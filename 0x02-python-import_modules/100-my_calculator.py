@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+
+# The quit() and exit() are used interchangeably
+# break statement terminates the current loop and resumes
+# execution at the next statement
 if __name__ == "__main__":
     from sys import argv
     if len(argv) != 4:
@@ -16,3 +20,6 @@ if __name__ == "__main__":
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         quit(1)
+
+# A program that imports all functions from the file calculator_1.py
+# and handles basic operations.
