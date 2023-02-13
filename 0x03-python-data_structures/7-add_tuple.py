@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+
+# When creating a tuple with one item, add a comma at the end.
+# The len function can be used to get the length of a tuple.
+# Accessing items in a tuple works similar to a list, using indexes.
+# A python tuple can be reassigned with a different value.
+# To join two or more tuples you can use the + operator.
+# Unpacking a tuple means splitting the tuple’s elements into individual
+# variables. Example x, y = (1, 2) The left side: x, y is a tuple of two
+# variables x and y. The right side is also a tuple of two integers 1 and 2.
 def add_tuple(tuple_a=(), tuple_b=()):
     zero_tuple = (0, )
     i = len(tuple_a)
@@ -25,3 +34,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
     b = a2 + b2
     new_tuple = (a, b)
     return(new_tuple)
+
+# A function that adds 2 tuples
