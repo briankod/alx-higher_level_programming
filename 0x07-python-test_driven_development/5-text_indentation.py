@@ -12,8 +12,23 @@ buns, beef and ketchup.
 """
 
 
+# The function initializes a flag variable to 0. This flag variable will be
+# used to keep track of whether we are currently in a whitespace or
+# non-whitespace section of the text.
+# The function then iterates over each character in the input text. If the
+# flag is 0 (i.e., we are currently in a whitespace section), the function
+# skips over any spaces it encounters and sets the flag to 1 when it
+# encounters the first non-space character.
+# If the flag is 1 (i.e., we are currently in a non-whitespace section), the
+# function checks whether the current character is a '.', '?' or ':'. If it
+# is, it prints out the character, followed by a newline character ('\n'),
+# and sets the flag back to 0. If it is not, it simply prints out the
+# character without any modification.
+# The function continues this process until it has processed all characters in
+# the input text.
 def text_indentation(text):
     """Prints a text with 2 new lines after given characters(.),(?)and(:)"""
+    # condition to check whether 'text' is suitable or not
     if type(text) is not str:
         raise TypeError("text must be a string")
     flag = 0
@@ -30,3 +45,6 @@ def text_indentation(text):
                 flag = 0
             else:
                 print(chr, end="")
+
+# A function that prints a text with 2 new lines after each of these
+# characters: ., ? and :
