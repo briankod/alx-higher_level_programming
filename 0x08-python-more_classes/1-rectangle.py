@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""An empty class Rectangle that defines a rectangle."""
+"""A class Rectangle that defines a rectangle."""
 
 
 class Rectangle:
@@ -57,6 +57,7 @@ class Rectangle:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -76,9 +77,21 @@ class Rectangle:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
+
+# Private instance attribute: width:
+# property def width(self): to retrieve it
+# property setter def width(self, value): to set it:
+# ...
+# Private instance attribute: height:
+# property def height(self): to retrieve it
+# property setter def height(self, value): to set it:
+# ...
+# Instantiation with optional width and
+# height: def __init__(self, width=0, height=0):

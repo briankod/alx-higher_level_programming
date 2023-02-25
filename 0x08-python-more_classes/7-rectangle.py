@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""An empty class Rectangle that defines a rectangle."""
+"""A class Rectangle that defines a rectangle."""
 
 
 class Rectangle:
@@ -140,3 +140,13 @@ class Rectangle:
             to be able to recreate a new instance by using eval()
         """
         return("Rectangle({:d}, {:d})".format(self.__width, self.__height))
+
+# Private instance attribute: width:
+# ...
+# Private instance attribute: height:
+# ...
+# Public class attribute print_symbol:
+# Initialized to #
+# Used as symbol for string representation
+# Can be any type
+# ...

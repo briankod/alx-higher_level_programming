@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-"""An empty class Rectangle that defines a rectangle."""
+"""A class Rectangle that defines a rectangle."""
 
 
+# Class attributes: These are attributes that are shared among all instances of
+# a class. They are defined outside of any method of the class and are accessed
+# using the class name. Class attributes are also known as static variables.
 class Rectangle:
     """Module of a rectangle
 
@@ -11,6 +14,9 @@ class Rectangle:
         __height (int): Describes the height of a rectangle
     """
 
+    # number_of_instances is initialized to 0 as a class-level variable. In the
+    # constructor (__init__), every time a new instance of my class is created,
+    # the variable is incremented by 1.
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
@@ -36,6 +42,8 @@ class Rectangle:
         Prints the message 'Bye rectangle...'
         """
         print("Bye rectangle...")
+        # Here, every time an instance of my class is deleted,
+        # the variable is decremented by 1.
         Rectangle.number_of_instances -= 1
 
     def area(self):
@@ -139,3 +147,13 @@ class Rectangle:
             to be able to recreate a new instance by using eval()
         """
         return("Rectangle({:d}, {:d})".format(self.__width, self.__height))
+
+# Private instance attribute: width:
+# ...
+# Private instance attribute: height:
+# ...
+# Public class attribute number_of_instances:
+# Initialized to 0
+# Incremented during each new instance instantiation
+# Decremented during each instance deletion
+# ...

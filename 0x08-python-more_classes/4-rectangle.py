@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""An empty class Rectangle that defines a rectangle."""
+"""A class Rectangle that defines a rectangle."""
 
 
 class Rectangle:
@@ -78,6 +78,7 @@ class Rectangle:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -97,6 +98,7 @@ class Rectangle:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -117,6 +119,10 @@ class Rectangle:
                                 for i in range(self.__height))
         return(string)
 
+    # The __repr__() method returns a more information-rich, or official,
+    # string representation of an object. This method is called by the
+    # built-in repr() function. If possible, the string returned should
+    # be a valid Python expression that can be used to recreate the object.
     def __repr__(self):
         """Represents the Rectangle objects as a string
 
@@ -126,3 +132,17 @@ class Rectangle:
             to be able to recreate a new instance by using eval()
         """
         return("Rectangle({:d}, {:d})".format(self.__width, self.__height))
+
+# Private instance attribute: width:
+# ...
+# Private instance attribute: height:
+# ...
+# Instantiation with optional width and
+# height: def __init__(self, width=0, height=0):
+# ...
+# print() and str() should print the rectangle with the character #: Example
+# my_rectangle = Rectangle(2, 4)
+# print(str(my_rectangle))
+# if width or height is equal to 0, return an empty string
+# repr() should return a string representation of the rectangle to be able to
+# recreate a new instance by using eval()

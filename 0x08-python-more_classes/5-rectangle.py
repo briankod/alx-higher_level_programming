@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""An empty class Rectangle that defines a rectangle."""
+"""A class Rectangle that defines a rectangle."""
 
 
 class Rectangle:
@@ -25,6 +25,10 @@ class Rectangle:
         self.width = width
         self.height = height
 
+    # The __del__() method is called when an instance of the class is
+    # about to be destroyed, or garbage collected. It can be used to
+    # perform any necessary cleanup or finalization tasks before the
+    # instance is removed from memory.
     def __del__(self):
         """Deletes the Rectangle objects
 
@@ -86,6 +90,7 @@ class Rectangle:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -105,6 +110,7 @@ class Rectangle:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -134,3 +140,13 @@ class Rectangle:
             to be able to recreate a new instance by using eval()
         """
         return("Rectangle({:d}, {:d})".format(self.__width, self.__height))
+
+# Private instance attribute: width:
+# ...
+# Private instance attribute: height:
+# ...
+# Instantiation with optional width and
+# height: def __init__(self, width=0, height=0):
+# ...
+# Print the message Bye rectangle... (... being 3 dots not ellipsis) when
+# an instance of Rectangle is deleted

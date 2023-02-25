@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""An empty class Rectangle that defines a rectangle."""
+"""A class Rectangle that defines a rectangle."""
 
 
 class Rectangle:
@@ -60,6 +60,14 @@ class Rectangle:
         else:
             return((self.__width * 2) + (self.__height * 2))
 
+    # Static Methods
+    # @staticmethod is a decorator, that gives the decorated method a static
+    # behavior. A decorator is simply a wrapper using the syntactic sugar “@”.
+    # This type of method takes neither a self nor a cls parameter (but of
+    # course it’s free to accept an arbitrary number of other parameters).
+    # Therefore a static method can neither modify object state nor class
+    # state. Static methods are restricted in what data they can
+    # access - and they’re primarily a way to namespace your methods.
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Compares two rectangles using their areas
@@ -162,3 +170,15 @@ class Rectangle:
             to be able to recreate a new instance by using eval()
         """
         return("Rectangle({:d}, {:d})".format(self.__width, self.__height))
+
+# Private instance attribute: width:
+# ...
+# Private instance attribute: height:
+# ...
+# Static method def bigger_or_equal(rect_1, rect_2): that returns the
+# biggest rectangle based on the area
+# rect_1 must be an instance of Rectangle, otherwise raise a TypeError
+# exception with the message 'rect_1 must be an instance of Rectangle'
+# rect_2 must be an instance of Rectangle, otherwise raise a TypeError
+# exception with the message 'rect_2 must be an instance of Rectangle'
+# Returns rect_1 if both have the same area value

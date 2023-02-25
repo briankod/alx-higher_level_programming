@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""An empty class Rectangle that defines a rectangle."""
+"""A class Rectangle that defines a rectangle."""
 
 
 class Rectangle:
@@ -78,6 +78,7 @@ class Rectangle:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -97,6 +98,7 @@ class Rectangle:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -116,3 +118,15 @@ class Rectangle:
             string += "\n".join("#" * self.__width
                                 for i in range(self.__height))
         return(string)
+
+# Private instance attribute: width:
+# ...
+# Private instance attribute: height:
+# ...
+# Instantiation with optional width and
+# height: def __init__(self, width=0, height=0):
+# ...
+# print() and str() should print the rectangle with the character #: Example
+# my_rectangle = Rectangle(2, 4)
+# print(str(my_rectangle))
+# if width or height is equal to 0, return an empty string

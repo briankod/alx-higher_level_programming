@@ -1,7 +1,17 @@
 #!/usr/bin/python3
-"""An empty class Rectangle that defines a rectangle."""
+"""A class Rectangle that defines a rectangle."""
 
 
+# Instance Methods
+# You can see the method takes one parameter, self, which points to an instance
+# of my class when the method is called (but of course instance methods can
+# accept more than just one parameter).
+# Through the self parameter, instance methods can freely access attributes and
+# other methods on the same object. This gives them a lot of power when it
+# comes to modifying an object’s state.
+# Not only can they modify object state, instance methods can also access the
+# class itself through the self.__class__ attribute. This means instance
+# methods can also modify class state.
 class Rectangle:
     """Module of a rectangle
 
@@ -60,6 +70,14 @@ class Rectangle:
         else:
             return ((self.__width * 2) + (self.__height * 2))
 
+    # Class Methods
+    # Instead of accepting a self parameter, class methods take a cls
+    # parameter that points to the class—and not the object instance—when
+    # the method is called.
+    # Because the class method only has access to this cls argument, it
+    # can’t modify object instance state. That would require access to
+    # self. However, class methods can still modify class state that
+    # applies across all instances of the class.
     @classmethod
     def square(cls, size=0):
         """Returns a new Rectangle instance with width == height == size"""
@@ -166,3 +184,10 @@ class Rectangle:
             to be able to recreate a new instance by using eval()
         """
         return("Rectangle({:d}, {:d})".format(self.__width, self.__height))
+
+# Private instance attribute: width:
+# ...
+# Private instance attribute: height:
+# ...
+# Class method def square(cls, size=0): that returns a new Rectangle
+# instance with width == height == size
