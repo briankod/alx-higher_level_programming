@@ -81,6 +81,7 @@ class Square:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -100,9 +101,20 @@ class Square:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not tuple or len(value) != 2 or \
            type(value[0]) is not int or value[0] < 0 or \
            type(value[1]) is not int or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
+
+# Private instance attribute: size
+# ...
+# Private instance attribute: position:
+# property def position(self): to retrieve it
+# property setter def position(self, value): to set it
+# ...
+# Instantiation with optional size and optional
+# position: def __init__(self, size=0, position=(0, 0)):
+# ...

@@ -40,6 +40,10 @@ class Square:
         if self.__size == 0:
             print()
             return
+        # In this code, we use a list comprehension to create a list of n "#"
+        # characters, and then use the join() method to concatenate them with
+        # a space character between them. The print() statement at the end of
+        # each row adds a newline character to start a new row.
         for i in range(self.__size):
             print("".join(["#" for j in range(self.__size)]))
 
@@ -65,9 +69,16 @@ class Square:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
+
+# Private instance attribute: size
+# ...
+# Public instance method: def my_print(self): that prints in
+# stdout the square with the character #
+# if size is equal to 0, print an empty line

@@ -80,6 +80,7 @@ class Square:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -99,6 +100,7 @@ class Square:
         Returns:
             None
         """
+        # condition to check whether 'value' is suitable or not
         if type(value) is not tuple or len(value) != 2 or \
            type(value[0]) is not int or value[0] < 0 or \
            type(value[1]) is not int or value[1] < 0:
@@ -106,6 +108,11 @@ class Square:
         else:
             self.__position = value
 
+    # The __str__() method returns a human-readable, or informal, string
+    # representation of an object. This method is called by the built-in
+    # print(), str(), and format() functions. If you don’t define
+    # a __str__() method for a class, then the built-in object
+    # implementation calls the __repr__() method instead.
     def __str__(self):
         """Represents the Square objects as a string
 
@@ -114,7 +121,12 @@ class Square:
             the representing string
         """
         if self.size == 0:
+            # if size is equal to zero, return an empty string
             return ("")
         string = "\n" * self.position[1] + (" " * self.position[0] +
                                             "#" * self.size + "\n") * self.size
         return (string[:-1])
+
+# Private instance attribute: size
+# ...
+# Printing a Square instance should have the same behavior as my_print()
