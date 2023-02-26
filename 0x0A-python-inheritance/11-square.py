@@ -41,3 +41,10 @@ class Square(Rectangle):
             the 'informal' representing string
         """
         return(f"[Square] {self.__size}/{self.__size}")
+
+# A class Square that inherits from Rectangle (9-rectangle.py).
+# (task based on 10-square.py).
+# Instantiation with size: 'def __init__(self, size):':
+# ...
+# print() should print, and str() should return, the square
+# description: [Square] <width>/<height>
