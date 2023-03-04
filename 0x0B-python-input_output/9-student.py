@@ -31,3 +31,9 @@ class Student:
     def to_json(self):
         """retrieves a dictionary representation of a Student instance"""
         return(self.__dict__)
+
+# A class Student that defines a student by:
+# Public instance attributes:
+# ...
+# Public method def to_json(self): that retrieves a dictionary representation
+# of a Student instance (same as 8-class_to_json.py)

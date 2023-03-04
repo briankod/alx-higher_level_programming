@@ -38,7 +38,24 @@ class Student:
                 new_dict[elm] = getattr(self, elm)
         return(new_dict)
 
+    # The reload_from_json method takes in a dictionary json and assigns
+    # each key-value pair in the dictionary to an attribute in the object
+    # that calls the method.
     def reload_from_json(self, json):
         """replaces all attributes of the Student instance"""
+        # The method iterates through each element elm in the json dictionary
+        # using a for loop. For each elm, the method accesses the object's
+        # __dict__ attribute, which contains a dictionary of the object's
+        # attributes and their values, and assigns the value of json[elm]
+        # to the object's attribute with the same name as elm.
         for elm in json:
             self.__dict__[elm] = json[elm]
+
+# A class Student that defines a student by: (based on 10-student.py)
+# Public instance attributes:
+# ...
+# Public method def reload_from_json(self, json): that replaces all
+# attributes of the Student instance:
+# You can assume json will always be a dictionary
+# A dictionary key will be the public attribute name
+# A dictionary value will be the value of the public attribute
