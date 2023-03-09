@@ -9,6 +9,7 @@ class Square(Rectangle):
 
     Use all attributes of Rectangle
     """
+    # Class constructor: def __init__(self, size, x=0, y=0, id=None):
     def __init__(self, size, x=0, y=0, id=None):
         """Initializes the rectangle attributes
 
@@ -22,9 +23,23 @@ class Square(Rectangle):
         Returns:
             None
         """
+        # Call the super class with id, x, y, width and height - this super
+        # call will use the logic of the __init__ of the Rectangle class.
+        # The width and height must be assigned to the value of size
+        # You must not create new attributes for this class, use all
+        # attributes of Rectangle - As reminder: a Square is a
+        # Rectangle with the same width and height
+        # All width, height, x and y validation must inherit from Rectangle
+        # - same behavior in case of wrong data
         super().__init__(size, size, x, y, id)
         self.size = size
 
+    # public getter and setter size
+    # The setter should assign (in this order) the width and the height - with
+    # the same value
+    # The setter should have the same value validation as the Rectangle for
+    # width and height - No need to change the exception error message (It
+    # should be the one from width)
     @property
     def size(self):
         """getting the size
@@ -51,6 +66,8 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    # The overloading __str__ method should return
+    # [Square] (<id>) <x>/<y> - <size> - in our case, width or height
     def __str__(self):
         """Represents the Square objects as a string
 
@@ -62,6 +79,12 @@ class Square(Rectangle):
         d = self.width
         return("[Square] ({}) {}/{} - {}".format(a, b, c, d))
 
+    # Public method def update(self, *args, **kwargs) that assigns attributes:
+    # *args is the list of arguments - no-keyworded arguments
+    # **kwargs can be thought of as a double pointer to a dictionary: key/value
+    # (keyworded arguments)
+    # **kwargs must be skipped if *args exists and is not empty
+    # Each key in this dictionary represents an attribute to the instance
     def update(self, *args, **kwargs):
         """ 'def update(self, *args):' alone assigns an argument to each
         attribute 'def update(self, *args, **kwargs):' assigns a key/value
@@ -77,12 +100,16 @@ class Square(Rectangle):
         """
         if args is not None and len(args) != 0:
             for i, arg in enumerate(args):
+                # 1st argument should be the id attribute
                 if i == 0:
                     self.id = arg
+                # 2nd argument should be the size attribute
                 elif i == 1:
                     self.size = arg
+                # 3rd argument should be the x attribute
                 elif i == 2:
                     self.x = arg
+                # 4th argument should be the y attribute
                 elif i == 3:
                     self.y = arg
 
@@ -97,6 +124,9 @@ class Square(Rectangle):
                 elif key == "y":
                     self.y = value
 
+    # Public method def to_dictionary(self): that returns the dictionary
+    # representation of a Square:
+    # This dictionary must contain: id, size, x, y
     def to_dictionary(self):
         """
         Return:

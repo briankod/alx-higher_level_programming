@@ -3,6 +3,11 @@
 from models.base import Base
 
 
+# Private instance attributes, each with its own public getter and setter:
+# __width -> width
+# __height -> height
+# __x -> x
+# __y -> y
 class Rectangle(Base):
     """Module of a rectangle
 
@@ -14,6 +19,7 @@ class Rectangle(Base):
         __x (int): Describes the x position
         __y (int): Describes the y position
     """
+    # Class constructor: def __init__(self, width, height, x=0, y=0, id=None):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes the rectangle attributes
 
@@ -29,10 +35,13 @@ class Rectangle(Base):
         Returns:
             None
         """
+        # Assign each argument width, height, x and y to the right attribute
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        # Call the super class with id - this super call will use the logic of
+        # the __init__ of the Base class
         super().__init__(id)
 
     @property
@@ -75,6 +84,15 @@ class Rectangle(Base):
         """
         return(self.__y)
 
+    # Validation of all setter methods and instantiation (id excluded):
+    # If the input is not an integer, raise the TypeError exception with
+    # the message: <name of the attribute> must be an integer. Example:
+    # width must be an integer
+    # If width or height is under or equals 0, raise the ValueError
+    # exception with the message: <name of the attribute> must be > 0.
+    # Example: width must be > 0
+    # If x or y is under 0, raise the ValueError exception with the message:
+    # <name of the attribute> must be >= 0. Example: x must be >= 0
     @width.setter
     def width(self, value):
         """setting the width
@@ -147,6 +165,8 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
+    # Public method def area(self): that returns the area value of the
+    # Rectangle instance.
     def area(self):
         """Calculates area of a rectangle
 
@@ -156,6 +176,8 @@ class Rectangle(Base):
         """
         return(self.__width * self.__height)
 
+    # Public method def display(self): to print in stdout the Rectangle
+    # instance with the character # by taking care of x and y
     def display(self):
         """Prints in stdout the Rectangle instance with the character #
 
@@ -167,6 +189,8 @@ class Rectangle(Base):
               "\n".join(((" " * self.__x) + ("#" * self.__width))
                         for i in range(self.__height)))
 
+    # overriding the __str__ method so that it returns
+    # [Rectangle] (<id>) <x>/<y> - <width>/<height>
     def __str__(self):
         """Represents the Rectangle objects as a string
 
@@ -178,6 +202,14 @@ class Rectangle(Base):
         d, e = self.width, self.height
         return("[Rectangle] ({}) {}/{} - {}/{}".format(a, b, c, d, e))
 
+    # Public method def update(self, *args, **kwargs): that assigns a key/value
+    # argument to attributes:
+    # **kwargs can be thought of as a double pointer to a dictionary: key/value
+    # As Python doesn’t have pointers, **kwargs is not literally a double
+    # pointer – describing it as such is just a way of explaining its
+    # behavior in terms you’re already familiar with **kwargs must be
+    # skipped if *args exists and is not empty
+    # Each key in this dictionary represents an attribute to the instance
     def update(self, *args, **kwargs):
         """ 'def update(self, *args):' alone assigns an argument to each
         attribute 'def update(self, *args, **kwargs):' assigns a key/value
@@ -193,14 +225,19 @@ class Rectangle(Base):
         """
         if args is not None and len(args) != 0:
             for i, arg in enumerate(args):
+                # 1st argument should be the id attribute
                 if i == 0:
                     self.id = arg
+                # 2nd argument should be the width attribute
                 elif i == 1:
                     self.width = arg
+                # 3rd argument should be the height attribute
                 elif i == 2:
                     self.height = arg
+                # 4th argument should be the x attribute
                 elif i == 3:
                     self.x = arg
+                # 5th argument should be the y attribute
                 elif i == 4:
                     self.y = arg
 
@@ -217,6 +254,9 @@ class Rectangle(Base):
                 elif key == "y":
                     self.y = value
 
+    # Public method def to_dictionary(self): that returns the dictionary
+    # representation of a Rectangle
+    # This dictionary must contain: id, width, height, x, y
     def to_dictionary(self):
         """
         Return:
